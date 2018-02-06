@@ -1,0 +1,93 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+class converter
+{
+ float length;
+ public:
+ converter(float X)
+ {
+   length=X;
+ }
+ friend void inch_to_cm(converter obj);
+ friend void cm_to_inch(converter obj);
+ friend void miles_to_km(converter obj);
+ friend void km_to_miles(converter obj);
+};
+void inch_to_cm(converter obj)
+{
+
+
+
+ obj.length=obj.length*2.54;
+ cout<<"length in cm"<<obj.length;
+ }
+
+void cm_to_inch(converter obj)
+{
+ obj.length=obj.length/2.54;
+ cout<<"length in inch"<<obj.length;
+ }
+ void miles_to_km(converter obj)
+{
+
+ obj.length=obj.length*1.609344;
+ cout<<"length in km"<<obj.length;
+ }
+ void km_to_miles(converter obj)
+{
+
+ obj.length=obj.length/1.609344;
+ cout<<"length in miles"<<obj.length;
+ }
+ int main()
+ {
+  int n;
+  float X;
+
+
+  while(n<5)
+  {
+  cout<<"\nEnter the length: ";
+  cin>>X;
+  cout<<"which operation you want to perform. Enter 1,2,3,4 or 5: ";
+  cin>>n;
+  converter obj(X);
+  switch(n)
+  {
+   case 1:
+    {
+
+     inch_to_cm( obj);
+     break;
+    }
+    case 2:
+    {
+
+     cm_to_inch(obj);
+     break;
+    }
+    case 3:
+    {
+
+     miles_to_km( obj);
+     break;
+    }
+    case 4:
+    {
+
+     km_to_miles(obj);
+     break;
+
+    }
+    case 5:
+    {
+    return 0;
+    break;
+    }
+    }
+
+ }
+return 0;
+}
+
